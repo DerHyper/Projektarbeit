@@ -24,14 +24,16 @@
         <div id="unity-build-title">VisB-3D</div>
       </div>
     </div>
-    <button onclick="sendToUnity()">Farbe: Rot</button>
+    <button onclick="sendToUnity()">Move</button>
     <script>
-      var unityInstance = UnityLoader.instantiate("unity-container", "Build/VisB-3D.json", {
-        onProgress: UnityProgress
-      });
+      let unityInstance = null;
 
       function sendToUnity() {
-        unityInstance.SendMessage('ObjectManager', 'IncPosition');
+        if (unityInstance) {
+          unityInstance.SendMessage('ObjectManager', 'IncPosition');
+        } else {
+          console.warn("Unity instance not ready yet");
+        }
       }
     </script>
     <script>
@@ -125,7 +127,8 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
+              }).then((instance) => {
+                unityInstance = instance;
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
