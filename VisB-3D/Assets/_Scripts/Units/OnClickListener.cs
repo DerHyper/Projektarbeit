@@ -10,5 +10,6 @@ public class OnClickListener : MonoBehaviour
     public void Click()
     {
         Debug.Log("Click on " + gameObject.name + " registered");
+        JavaScriptAPI.DebugAlert("Click on " + gameObject.name + " registered");
     }
 }
