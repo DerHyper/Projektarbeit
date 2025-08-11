@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class JavaScriptAPI : MonoBehaviour
+public static class JavaScriptAPI
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    /// <summary>
+    /// Debug method for checking if Unity can call JS. Has a method with the same name in the index.html file.
+    /// </summary>
+    [DllImport("__Internal")]
+    public static extern void DebugAlert(string str);
 }
