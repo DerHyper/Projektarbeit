@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class WebSocketManager : MonoBehaviour
 {
@@ -16,7 +17,20 @@ public class WebSocketManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    /// <summary>
+    /// Calls the ConnectWS function in the JavaScript plugin unity_to_js_plugin.jslib to connect to a WebSocket server.
+    /// </summary>
+    [DllImport("__Internal")]
+    public static extern void ConnectWS(string url);
 
+    private void Start()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        string url = "ws://localhost:8081";
+        ConnectWS(url);
+#endif
+    }
 
     public void OnWebSocketOpen()
     {
