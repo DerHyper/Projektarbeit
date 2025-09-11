@@ -14,7 +14,7 @@ mergeInto(LibraryManager.library, {
     const url = UTF8ToString(urlUTF);
     console.log("Connecting to WebSocket at: " + url);
     
-    ws = new WebSocket();
+    ws = new WebSocket(url);
 
     ws.on("open", () => {
       console.log("WebSocket connection opened.");
