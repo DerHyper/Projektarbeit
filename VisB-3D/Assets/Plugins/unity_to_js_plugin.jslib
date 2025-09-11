@@ -16,7 +16,7 @@ mergeInto(LibraryManager.library, {
     
     ws = new WebSocket(url);
 
-    ws.on("open", () => {
+    ws.addEventListener("open", () => {
       console.log("WebSocket connection opened.");
       SendMessage("WebSocketManager", "OnWebSocketOpen"); // Call Unity method
     })
