@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
+using System;
 
 public class WebSocketManager : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class WebSocketManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     /// <summary>
     /// Calls the ConnectWS function in the JavaScript plugin unity_to_js_plugin.jslib to connect to a WebSocket server.
     /// </summary>
@@ -36,5 +37,11 @@ public class WebSocketManager : MonoBehaviour
     {
         Debug.Log("WebSocket connection established.");
         ObjectManager.instance.IncPosition();
+    }
+    
+    public void OnWebSocketMessage(String message)
+    {
+        Debug.Log("Message from server: " + message);
+        ObjectManager.instance.ShowText(message);
     }
 }

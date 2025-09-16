@@ -20,5 +20,10 @@ mergeInto(LibraryManager.library, {
       console.log("WebSocket connection opened.");
       SendMessage("WebSocketManager", "OnWebSocketOpen"); // Call Unity method
     })
+
+    ws.addEventListener("message", (event) => {
+      console.log("WebSocket Message from server ", event.data);
+      SendMessage("WebSocketManager", "OnWebSocketMessage"); // Call Unity method
+    })
   }
 });
