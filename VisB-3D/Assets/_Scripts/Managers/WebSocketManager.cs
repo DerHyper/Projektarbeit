@@ -39,7 +39,7 @@ public class WebSocketManager : MonoBehaviour
         ObjectManager.instance.IncPosition();
     }
     
-    public void OnWebSocketMessage(String message)
+    public void OnWebSocketMessage(string message)
     {
         Debug.Log("Message from server: " + message);
         ObjectManager.instance.ShowText(message);
