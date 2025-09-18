@@ -22,8 +22,8 @@ mergeInto(LibraryManager.library, {
     })
 
     ws.addEventListener("message", (event) => {
-      console.log("WebSocket Message from server ", event.data);
-      SendMessage("WebSocketManager", "OnWebSocketMessage"); // Call Unity method
+      console.log("WebSocket Message from server: \"" + event.data + "\"");
+      SendMessage("WebSocketManager", "OnWebSocketMessage", event.data); // Call Unity method
     })
   }
 });
