@@ -26,9 +26,14 @@ public class ObjectManager : MonoBehaviour
     {
         myObject.transform.position += new Vector3(1, 0, 0);
     }
-    
+
     public void ShowText(string text)
     {
         debugText.text = text;
+    }
+
+    public void UpdateVisualisation(string data)
+    {
+        
     }
 }
