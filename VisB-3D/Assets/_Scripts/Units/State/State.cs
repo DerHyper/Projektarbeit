@@ -1,18 +1,11 @@
 using System.Collections.Generic;
-using System.Data;
 
 public class State
 {
-    public enum Type
-    {
-        Material,
-        Position,
-        Visibility
-    }
-    public Dictionary<string, ObjectState> elements;
+    public List<ObjectState> objectStates;
 
     public State()
     {
-        elements = new Dictionary<string, ObjectState>();
+        objectStates = new List<ObjectState>();
     }
 } 
