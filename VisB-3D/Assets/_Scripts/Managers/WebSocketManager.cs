@@ -43,5 +43,6 @@ public class WebSocketManager : MonoBehaviour
     {
         Debug.Log("Message from server: " + message);
         ObjectManager.instance.ShowText(message);
+        ObjectManager.instance.UpdateVisualization(message);
     }
 }

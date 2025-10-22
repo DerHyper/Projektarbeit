@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public abstract class VisB3DObjectDto
 {
-    public enum MaterialDto {
+    public enum MaterialDto
+    {
         standard,
         red,
         orange,

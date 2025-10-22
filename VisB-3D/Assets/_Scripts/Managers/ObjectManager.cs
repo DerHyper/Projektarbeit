@@ -32,8 +32,9 @@ public class ObjectManager : MonoBehaviour
         debugText.text = text;
     }
 
-    public void UpdateVisualisation(string data)
+    public void UpdateVisualization(string data)
     {
-        
+        VisB3DDto dto = MessageParser.MessageToState(data);
+        ShowText("Received " + dto.objectStates.Count + " objects:" + data);
     }
 }
