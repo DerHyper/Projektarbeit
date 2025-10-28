@@ -193,6 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 58754089}
+  - component: {fileID: 58754090}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -215,6 +216,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1391349193}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &58754090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58754088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b580bb693bc714c9f2dbc0f59a126e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &104289892
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +397,39 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0, g: 0.47058827, b: 0.45882356, a: 0.7529412}
-  m_Text: 
+  m_Text: "{\r\n  \"objectStates\": [\r\n    {\r\n      \"name\": \"cars_yellow_1\",\r\n     
+    \"material\": \"black\",\r\n      \"isActive\": true,\r\n      \"position\":
+    {\r\n        \"x\": 0.0,\r\n        \"y\": 0.0,\r\n        \"z\": null\r\n     
+    },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
+    \"z\": null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
+    \"peds_red\",\r\n      \"material\": \"red\",\r\n      \"isActive\": null,\r\n     
+    \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
+    },\r\n    {\r\n      \"name\": \"peds_green\",\r\n      \"material\": \"black\",\r\n     
+    \"isActive\": null,\r\n      \"position\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"rotation\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
+    \"scale\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      }\r\n    },\r\n    {\r\n      \"name\": \"cars_red\",\r\n     
+    \"material\": \"red\",\r\n      \"isActive\": null,\r\n      \"position\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
+    \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n        \"y\":
+    null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
+    \"cars_yellow_2\",\r\n      \"material\": \"black\",\r\n      \"isActive\": false,\r\n     
+    \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
+    },\r\n    {\r\n      \"name\": \"cars_green\",\r\n      \"material\": \"black\",\r\n     
+    \"isActive\": null,\r\n      \"position\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"rotation\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
+    \"scale\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      }\r\n    }\r\n  ]\r\n}"
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -848,7 +893,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 573646267}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 777187867}
+        m_TargetAssemblyTypeName: DebuggerManager, Assembly-CSharp
+        m_MethodName: MockDebugMessageFromInputField
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 184799109}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &573646267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,6 +1114,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1057488889}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &777187866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777187868}
+  - component: {fileID: 777187867}
+  m_Layer: 0
+  m_Name: DebuggerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &777187867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777187866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94dd4efcc6935b4da7e061164d902b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &777187868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777187866}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1391349193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &834903058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1613,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myObject: {fileID: 834903058}
   messageOutputField: {fileID: 208202608}
-  debugMessageInputField: {fileID: 0}
 --- !u!1 &1229533977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +1829,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1320587351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 58754090}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: TogglePanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 647262505}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1320587351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1926,7 +2038,39 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "{\r\n  \"objectStates\": [\r\n    {\r\n      \"name\": \"cars_yellow_1\",\r\n     
+    \"material\": \"black\",\r\n      \"isActive\": true,\r\n      \"position\":
+    {\r\n        \"x\": 0.0,\r\n        \"y\": 0.0,\r\n        \"z\": null\r\n     
+    },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
+    \"z\": null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
+    \"peds_red\",\r\n      \"material\": \"red\",\r\n      \"isActive\": null,\r\n     
+    \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
+    },\r\n    {\r\n      \"name\": \"peds_green\",\r\n      \"material\": \"black\",\r\n     
+    \"isActive\": null,\r\n      \"position\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"rotation\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
+    \"scale\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      }\r\n    },\r\n    {\r\n      \"name\": \"cars_red\",\r\n     
+    \"material\": \"red\",\r\n      \"isActive\": null,\r\n      \"position\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
+    \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n        \"y\":
+    null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
+    \"cars_yellow_2\",\r\n      \"material\": \"black\",\r\n      \"isActive\": false,\r\n     
+    \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
+    },\r\n    {\r\n      \"name\": \"cars_green\",\r\n      \"material\": \"black\",\r\n     
+    \"isActive\": null,\r\n      \"position\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"rotation\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
+    \"scale\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      }\r\n    }\r\n  ]\r\n}\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2138,6 +2282,7 @@ Transform:
   - {fileID: 104289893}
   - {fileID: 1799503306}
   - {fileID: 58754089}
+  - {fileID: 777187868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1394935786
@@ -2689,7 +2834,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1660863344}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 58754090}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: TogglePanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1514631553}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1660863344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2971,7 +3128,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869783059}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 

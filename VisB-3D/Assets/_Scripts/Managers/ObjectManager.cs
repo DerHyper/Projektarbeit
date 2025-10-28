@@ -9,7 +9,6 @@ public class ObjectManager : MonoBehaviour
     public static ObjectManager instance;
     public GameObject myObject;
     public TMP_InputField messageOutputField;
-    public TMP_InputField debugMessageInputField;
 
     private void Awake()
     {
