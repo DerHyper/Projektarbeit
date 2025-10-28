@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public static class MessageParser
 {
@@ -11,7 +12,7 @@ public static class MessageParser
     /// <returns></returns>
     public static VisB3DDto MessageToState(string message)
     {
-        VisB3DDto state = JsonUtility.FromJson<VisB3DDto>(message);
+        VisB3DDto state = JsonConvert.DeserializeObject<VisB3DDto>(message);
         return state;
     }
 }
