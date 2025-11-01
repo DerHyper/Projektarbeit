@@ -336,44 +336,45 @@ MonoBehaviour:
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0, g: 0.47058827, b: 0.45882356, a: 0.7529412}
   m_Text: "{\r\n  \"objectStates\": [\r\n    {\r\n      \"name\": \"cars_yellow_1\",\r\n     
-    \"material\": {\n        \"color\": \"black\",\n        \"metallic\": null,\n       
-    \"smoothness\": null,\n      },\r\n      \"isActive\": true,\r\n      \"position\":
+    \"material\": {\r\n        \"color\": \"black\",\r\n        \"metallic\": null,\r\n       
+    \"smoothness\": null\r\n      },\r\n      \"isActive\": true,\r\n      \"position\":
     {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n     
     },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
     \"z\": null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n       
     \"y\": null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
-    \"peds_red\",\r\n      \"material\": {\n        \"color\": \"red\",\n       
-    \"metallic\": null,\n        \"smoothness\": null,\n      },\r\n      \"isActive\":
+    \"peds_red\",\r\n      \"material\": {\r\n        \"color\": \"red\",\r\n       
+    \"metallic\": null,\r\n        \"smoothness\": null\r\n      },\r\n      \"isActive\":
     null,\r\n      \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
     \"z\": null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
     \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
     \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
-    },\r\n    {\r\n      \"name\": \"peds_green\",\r\n      \"material\": {\n       
-    \"color\": \"black\",\n        \"metallic\": null,\n        \"smoothness\": null,\n     
-    },\r\n      \"isActive\": null,\r\n      \"position\": {\r\n        \"x\": null,\r\n       
-    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"rotation\": {\r\n       
+    },\r\n    {\r\n      \"name\": \"cars_red\",\r\n      \"material\": {\r\n       
+    \"color\": \"red\",\r\n        \"metallic\": null,\r\n        \"smoothness\":
+    null\r\n      },\r\n      \"isActive\": null,\r\n      \"position\": {\r\n       
     \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
-    \"scale\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
-    null\r\n      }\r\n    },\r\n    {\r\n      \"name\": \"cars_red\",\r\n     
-    \"material\": {\n        \"color\": \"red\",\n        \"metallic\": null,\n       
-    \"smoothness\": null,\n      },\r\n      \"isActive\": null,\r\n      \"position\":
-    {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n     
-    },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
-    \"z\": null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n       
-    \"y\": null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
-    \"cars_yellow_2\",\r\n      \"material\": {\n        \"color\": \"black\",\n       
-    \"metallic\": null,\n        \"smoothness\": null,\n      },\r\n      \"isActive\":
+    \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n        \"y\":
+    null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
+    \"cars_yellow_2\",\r\n      \"material\": {\r\n        \"color\": \"black\",\r\n       
+    \"metallic\": null,\r\n        \"smoothness\": null\r\n      },\r\n      \"isActive\":
     false,\r\n      \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
     \"z\": null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
     \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
     \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
-    },\r\n    {\r\n      \"name\": \"cars_green\",\r\n      \"material\": {\n       
-    \"color\": \"black\",\n        \"metallic\": null,\n        \"smoothness\": null,\n     
-    },\r\n      \"isActive\": null,\r\n      \"position\": {\r\n        \"x\": null,\r\n       
-    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"rotation\": {\r\n       
+    },\r\n    {\r\n      \"name\": \"cars_green\",\r\n      \"material\": {\r\n       
+    \"color\": \"black\",\r\n        \"metallic\": null,\r\n        \"smoothness\":
+    null\r\n      },\r\n      \"isActive\": null,\r\n      \"position\": {\r\n       
     \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
-    \"scale\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
-    null\r\n      }\r\n    }\r\n  ]\r\n}"
+    \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n        \"y\":
+    null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
+    \"peds_green\",\r\n      \"material\": {\r\n        \"color\": \"black\",\r\n       
+    \"metallic\": null,\r\n        \"smoothness\": null\r\n      },\r\n      \"isActive\":
+    null,\r\n      \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
+    \"z\": null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
+    }\r\n  ]\r\n}"
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -1985,44 +1986,45 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "{\r\n  \"objectStates\": [\r\n    {\r\n      \"name\": \"cars_yellow_1\",\r\n     
-    \"material\": {\n        \"color\": \"black\",\n        \"metallic\": null,\n       
-    \"smoothness\": null,\n      },\r\n      \"isActive\": true,\r\n      \"position\":
+    \"material\": {\r\n        \"color\": \"black\",\r\n        \"metallic\": null,\r\n       
+    \"smoothness\": null\r\n      },\r\n      \"isActive\": true,\r\n      \"position\":
     {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n     
     },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
     \"z\": null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n       
     \"y\": null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
-    \"peds_red\",\r\n      \"material\": {\n        \"color\": \"red\",\n       
-    \"metallic\": null,\n        \"smoothness\": null,\n      },\r\n      \"isActive\":
+    \"peds_red\",\r\n      \"material\": {\r\n        \"color\": \"red\",\r\n       
+    \"metallic\": null,\r\n        \"smoothness\": null\r\n      },\r\n      \"isActive\":
     null,\r\n      \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
     \"z\": null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
     \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
     \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
-    },\r\n    {\r\n      \"name\": \"peds_green\",\r\n      \"material\": {\n       
-    \"color\": \"black\",\n        \"metallic\": null,\n        \"smoothness\": null,\n     
-    },\r\n      \"isActive\": null,\r\n      \"position\": {\r\n        \"x\": null,\r\n       
-    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"rotation\": {\r\n       
+    },\r\n    {\r\n      \"name\": \"cars_red\",\r\n      \"material\": {\r\n       
+    \"color\": \"red\",\r\n        \"metallic\": null,\r\n        \"smoothness\":
+    null\r\n      },\r\n      \"isActive\": null,\r\n      \"position\": {\r\n       
     \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
-    \"scale\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
-    null\r\n      }\r\n    },\r\n    {\r\n      \"name\": \"cars_red\",\r\n     
-    \"material\": {\n        \"color\": \"red\",\n        \"metallic\": null,\n       
-    \"smoothness\": null,\n      },\r\n      \"isActive\": null,\r\n      \"position\":
-    {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n     
-    },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
-    \"z\": null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n       
-    \"y\": null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
-    \"cars_yellow_2\",\r\n      \"material\": {\n        \"color\": \"black\",\n       
-    \"metallic\": null,\n        \"smoothness\": null,\n      },\r\n      \"isActive\":
+    \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n        \"y\":
+    null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
+    \"cars_yellow_2\",\r\n      \"material\": {\r\n        \"color\": \"black\",\r\n       
+    \"metallic\": null,\r\n        \"smoothness\": null\r\n      },\r\n      \"isActive\":
     false,\r\n      \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
     \"z\": null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
     \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
     \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
-    },\r\n    {\r\n      \"name\": \"cars_green\",\r\n      \"material\": {\n       
-    \"color\": \"black\",\n        \"metallic\": null,\n        \"smoothness\": null,\n     
-    },\r\n      \"isActive\": null,\r\n      \"position\": {\r\n        \"x\": null,\r\n       
-    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"rotation\": {\r\n       
+    },\r\n    {\r\n      \"name\": \"cars_green\",\r\n      \"material\": {\r\n       
+    \"color\": \"black\",\r\n        \"metallic\": null,\r\n        \"smoothness\":
+    null\r\n      },\r\n      \"isActive\": null,\r\n      \"position\": {\r\n       
     \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      },\r\n     
-    \"scale\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
-    null\r\n      }\r\n    }\r\n  ]\r\n}\u200B"
+    \"rotation\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n        \"z\":
+    null\r\n      },\r\n      \"scale\": {\r\n        \"x\": null,\r\n        \"y\":
+    null,\r\n        \"z\": null\r\n      }\r\n    },\r\n    {\r\n      \"name\":
+    \"peds_green\",\r\n      \"material\": {\r\n        \"color\": \"black\",\r\n       
+    \"metallic\": null,\r\n        \"smoothness\": null\r\n      },\r\n      \"isActive\":
+    null,\r\n      \"position\": {\r\n        \"x\": null,\r\n        \"y\": null,\r\n       
+    \"z\": null\r\n      },\r\n      \"rotation\": {\r\n        \"x\": null,\r\n       
+    \"y\": null,\r\n        \"z\": null\r\n      },\r\n      \"scale\": {\r\n       
+    \"x\": null,\r\n        \"y\": null,\r\n        \"z\": null\r\n      }\r\n   
+    }\r\n  ]\r\n}\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
