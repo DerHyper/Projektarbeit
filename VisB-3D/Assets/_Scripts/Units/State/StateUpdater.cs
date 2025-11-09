@@ -66,30 +66,49 @@ public class StateUpdater : MonoBehaviour
         }
         else if (UnityEngine.ColorUtility.TryParseHtmlString(newState.material.color, out Color foundColor))
         {
-            // If not found, update the current material. This is okay since each object has its own instance of the material.
-            current.color = foundColor; // TODO: Fix Hex to Color conversion
+            // Update the current material to a basic HTML or HEX color. This is okay since each object has its own instance of the material.
+            // If a material is transparent, it has to be loaded from the Resources folder, since transparency requires a specific shader build,
+            // that can be missing when using WebGL build. (Source: https://www.reddit.com/r/Unity3D/comments/kqbnul/transparent_rendering_mode_not_working_in_webgl/)
             if (foundColor.a < 1.0f)
             {
-                current.SetFloat("_Mode", 3); // Transparent
-                current.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-                current.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-                current.SetInt("_ZWrite", 0);
-                current.DisableKeyword("_ALPHATEST_ON");
-                current.EnableKeyword("_ALPHABLEND_ON");
-                current.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-                current.renderQueue = 3000;
+                float tmpMetallic = current.GetFloat("_Metallic");
+                float tmpGlossiness = current.GetFloat("_Glossiness");
+                
+                Material newMat = Instantiate(ResourcesManager.instance.transparentMaterial);
+                gameObject.GetComponent<Renderer>().material = newMat;
+                gameObject.GetComponent<Renderer>().material.color = foundColor;
+
+                gameObject.GetComponent<Renderer>().material.SetFloat("_Metallic", tmpMetallic);
+                gameObject.GetComponent<Renderer>().material.SetFloat("_Glossiness", tmpGlossiness);
+
+                return;
             }
-            else
-            {
-                current.SetFloat("_Mode", 0); // Opaque
-                current.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-                current.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-                current.SetInt("_ZWrite", 1);
-                current.DisableKeyword("_ALPHATEST_ON");
-                current.DisableKeyword("_ALPHABLEND_ON");
-                current.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-                current.renderQueue = -1;
-            }
+
+            current.color = foundColor;
+            
+            // current.color = foundColor;
+            // if (foundColor.a < 1.0f)
+            // {
+            //     current.SetFloat("_Mode", 3); // Transparent
+            //     current.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            //     current.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            //     current.SetInt("_ZWrite", 0);
+            //     current.DisableKeyword("_ALPHATEST_ON");
+            //     current.EnableKeyword("_ALPHABLEND_ON");
+            //     current.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            //     current.renderQueue = 3000;
+            // }
+            // else
+            // {
+            //     current.SetFloat("_Mode", 0); // Opaque
+            //     current.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+            //     current.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+            //     current.SetInt("_ZWrite", 1);
+            //     current.DisableKeyword("_ALPHATEST_ON");
+            //     current.DisableKeyword("_ALPHABLEND_ON");
+            //     current.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            //     current.renderQueue = -1;
+            // }
         }
     }
 
