@@ -27,6 +27,11 @@ public class ObjectManager : MonoBehaviour
 
     private void Start()
     {
+        UpdateManagedObjects();
+    }
+
+    public void UpdateManagedObjects()
+    {
         stateObjectParent.GetComponentsInChildren<StateUpdater>().ToList().ForEach(su =>
             managedObjects.Add(su.gameObject.name, su)
         );
