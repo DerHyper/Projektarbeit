@@ -15,7 +15,6 @@ public class ModelLoadingManager : MonoBehaviour
     private bool loadDebugModelFromDisk = false;
     [SerializeField]
     private string debugModelUri = "";
-    // private GLTFast.GltfAsset gltfAsset;
 
     private void Awake()
     {
@@ -31,21 +30,14 @@ public class ModelLoadingManager : MonoBehaviour
 
     void Start()
     {
-        // InitGltfAsset();
-
 #if UNITY_EDITOR
         if (loadDebugModelFromDisk)
         {
-            LoadModelFromUri(debugModelUri);
+            GameManager.instance.LoadModel(debugModelUri);
         }
 #endif
     }
 
-    // private void InitGltfAsset()
-    // {
-    //     GltfAsset gltf = gameObject.GetComponent<GLTFast.GltfAsset>();
-    //     gltfAsset = gltf != null ? gltf : gameObject.AddComponent<GLTFast.GltfAsset>();
-    // }
 
     public async Task<bool> LoadModelFromUri(string uri)
     {

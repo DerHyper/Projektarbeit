@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         {
             ModelLoadingManager.instance.InitModelObjects();
         }
+        ObjectManager.instance.UpdateManagedObjects();
         SetState(AppState.Running);
     }
 }
