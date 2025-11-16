@@ -85,30 +85,6 @@ public class StateUpdater : MonoBehaviour
             }
 
             current.color = foundColor;
-            
-            // current.color = foundColor;
-            // if (foundColor.a < 1.0f)
-            // {
-            //     current.SetFloat("_Mode", 3); // Transparent
-            //     current.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            //     current.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            //     current.SetInt("_ZWrite", 0);
-            //     current.DisableKeyword("_ALPHATEST_ON");
-            //     current.EnableKeyword("_ALPHABLEND_ON");
-            //     current.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            //     current.renderQueue = 3000;
-            // }
-            // else
-            // {
-            //     current.SetFloat("_Mode", 0); // Opaque
-            //     current.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-            //     current.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-            //     current.SetInt("_ZWrite", 1);
-            //     current.DisableKeyword("_ALPHATEST_ON");
-            //     current.DisableKeyword("_ALPHABLEND_ON");
-            //     current.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            //     current.renderQueue = -1;
-            // }
         }
     }
 
