@@ -1463,7 +1463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &973846158
 Transform:
   m_ObjectHideFlags: 0
@@ -2405,7 +2405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1397533208}
-  - component: {fileID: 1397533209}
+  - component: {fileID: 1397533210}
   m_Layer: 0
   m_Name: ModelLoadingManager
   m_TagString: Untagged
@@ -2428,7 +2428,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1391349193}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1397533209
+--- !u!114 &1397533210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2437,28 +2437,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1397533207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b781fe673a5534e91b1e802df4b9362e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8364f60ce2eb06c48b2061fda092f216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  importSettings:
-    nodeNameMethod: 0
-    animationMethod: 1
-    generateMipMaps: 0
-    texturesReadable: 0
-    defaultMinFilterMode: 9729
-    defaultMagFilterMode: 9729
-    anisotropicFilterLevel: 1
-  url: http://localhost:8080/TrafficLight.glb
-  loadOnStartup: 1
-  sceneId: -1
-  playAutomatically: 1
-  streamingAsset: 0
-  instantiationSettings:
-    mask: -1
-    layer: 0
-    skinUpdateWhenOffscreen: 1
-    lightIntensityFactor: 1
-    sceneObjectCreation: 2
+  modelParent: {fileID: 973846158}
+  loadDebugModelFromDisk: 1
+  debugModelUri: E:\User\Arbeiten\Studium\Master\Projektarbeit\visb-visualisation-examples\TrafficLight\TrafficLight.glb
 --- !u!1001 &1461217072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3582,7 +3566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &150697417427102507
 GameObject:
   m_ObjectHideFlags: 0

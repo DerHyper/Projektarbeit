@@ -7,6 +7,7 @@ using System;
 public class WebSocketManager : MonoBehaviour
 {
     public static WebSocketManager instance;
+    private const string INIT_PREFIX = "Init: ";
     private void Awake()
     {
         if (instance == null)
@@ -42,6 +43,13 @@ public class WebSocketManager : MonoBehaviour
     public void OnWebSocketMessage(string message)
     {
         Debug.Log("Message from server: " + message);
+
+        if (message.StartsWith(INIT_PREFIX))
+        {
+            string modelUri = message.Substring(INIT_PREFIX.Length);
+            GameManager.instance.LoadModel(modelUri);
+        }
+        
         ObjectManager.instance.ShowText(message);
         ObjectManager.instance.UpdateVisualization(message);
     }
