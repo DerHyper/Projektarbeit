@@ -48,6 +48,8 @@ public class WebSocketManager : MonoBehaviour
         {
             string modelUri = message.Substring(INIT_PREFIX.Length);
             GameManager.instance.LoadModel(modelUri);
+            ObjectManager.instance.ShowText(message);
+            return;
         }
         
         ObjectManager.instance.ShowText(message);
