@@ -62,7 +62,10 @@ public class ModelLoadingManager : MonoBehaviour
 
     public void InitModelObjects()
     {
-        AddStateUpdaterRecursively(modelParent);
+        foreach (Transform child in modelParent)
+        {
+            AddStateUpdaterRecursively(child);
+        }
     }
 
     private void AddStateUpdaterRecursively(Transform parent)
