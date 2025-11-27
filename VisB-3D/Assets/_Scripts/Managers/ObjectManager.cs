@@ -11,6 +11,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject myObject;
     public TMP_InputField messageOutputField;
     public GameObject stateObjectParent;
+    public StateUpdater CameraStateUpdater;
     public Dictionary<string, StateUpdater> managedObjects = new();
 
     private void Awake()
@@ -32,9 +33,11 @@ public class ObjectManager : MonoBehaviour
 
     public void UpdateManagedObjects()
     {
+        managedObjects.Clear();
         stateObjectParent.GetComponentsInChildren<StateUpdater>().ToList().ForEach(su =>
             managedObjects.Add(su.gameObject.name, su)
         );
+        managedObjects.Add(CameraStateUpdater.gameObject.name, CameraStateUpdater);
     }
 
     public void IncPosition()
