@@ -30,7 +30,7 @@ public class StateUpdater : MonoBehaviour
 
     private void UpdateMaterial(VisB3DObjectDto newState)
     {
-        if (newState.material == null)
+        if (newState.material == null || gameObject.GetComponent<Renderer>() == null)
         {
             return;
         }
