@@ -1,0 +1,22 @@
+{
+  "svg":"Drone.glb",
+  "model-name":"Drone",
+  "items":[
+    {
+      "id":"Drone_Body",
+      "attr":"x",
+      "value":"x/VOXEL_SIZE"
+    },
+    {
+      "id":"Drone_Body",
+      "attr":"y",
+      "value":"y/VOXEL_SIZE"
+    },
+    {
+      "id":"Drone_Body",
+      "attr":"z",
+      "value":"z/VOXEL_SIZE"
+    }
+  ],
+  "events": []
+}
