@@ -1,22 +1,38 @@
 {
   "svg":"Drone.glb",
-  "model-name":"Drone",
+  "model-name":"DroneSafetyController_Init",
   "items":[
     {
       "id":"Drone_Body",
       "attr":"x",
-      "value":"x/VOXEL_SIZE"
+      "value":"real(x)/1000.0"
     },
     {
       "id":"Drone_Body",
       "attr":"y",
-      "value":"y/VOXEL_SIZE"
+      "value":"real(z)/1000.0"
     },
     {
       "id":"Drone_Body",
       "attr":"z",
-      "value":"z/VOXEL_SIZE"
+      "value":"real(y)/1000.0"
+    },
+    {
+      "id":"Camera",
+      "attr":"x",
+      "value":"real(x)/1000.0"
+    },
+    {
+      "id":"Camera",
+      "attr":"y",
+      "value":"real(z)/1000.0+0.1"
+    },
+    {
+      "id":"Camera",
+      "attr":"z",
+      "value":"real(y)/1000.0"
     }
+
   ],
   "events": []
 }
