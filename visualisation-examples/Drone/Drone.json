@@ -18,6 +18,51 @@
       "value":"real(y)/1000.0"
     },
     {
+      "id":"Drone_Body",
+      "attr":"scale_x",
+      "value":"real(DRONE_WIDTH)/1000.0"
+    },
+    {
+      "id":"Drone_Body",
+      "attr":"scale_y",
+      "value":"real(DRONE_HEIGHT)/1000.0"
+    },
+    {
+      "id":"Drone_Body",
+      "attr":"scale_z",
+      "value":"real(DRONE_DEPTH)/1000.0"
+    },
+    {
+      "id":"EPS_Zone",
+      "attr":"x",
+      "value":"real(x)/1000.0"
+    },
+    {
+      "id":"EPS_Zone",
+      "attr":"y",
+      "value":"real(z-EPS_DRONE)/1000.0"
+    },
+    {
+      "id":"EPS_Zone",
+      "attr":"z",
+      "value":"real(y)/1000.0"
+    },
+    {
+      "id":"EPS_Zone",
+      "attr":"scale_x",
+      "value":"real(DRONE_WIDTH + (2*EPS_DRONE))/1000.0"
+    },
+    {
+      "id":"EPS_Zone",
+      "attr":"scale_y",
+      "value":"real(DRONE_HEIGHT + (2*EPS_DRONE))/1000.0"
+    },
+    {
+      "id":"EPS_Zone",
+      "attr":"scale_z",
+      "value":"real(DRONE_DEPTH + (2*EPS_DRONE))/1000.0"
+    },
+    {
       "id":"Camera",
       "attr":"x",
       "value":"real(x)/1000.0"
@@ -25,12 +70,12 @@
     {
       "id":"Camera",
       "attr":"y",
-      "value":"real(z)/1000.0+0.1"
+      "value":"real(z)/1000.0 + 0.2*(real(DRONE_HEIGHT)/1000.0)"
     },
     {
       "id":"Camera",
       "attr":"z",
-      "value":"real(y)/1000.0"
+      "value":"real(y)/1000.0 + 1.7*(real(DRONE_DEPTH)/1000.0)"
     }
 
   ],
