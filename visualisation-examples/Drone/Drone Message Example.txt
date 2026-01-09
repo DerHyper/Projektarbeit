@@ -1,0 +1,76 @@
+{
+  "objectStates": [
+    {
+      "name": "EPS_Zone",
+      "material": {
+        "color": null,
+        "metallic": null,
+        "smoothness": null
+      },
+      "isActive": null,
+      "position": {
+        "x": 5.0,
+        "y": -0.1,
+        "z": 5.0
+      },
+      "rotation": {
+        "x": null,
+        "y": null,
+        "z": null
+      },
+      "scale": {
+        "x": 0.292,
+        "y": 0.229,
+        "z": 0.292
+      }
+    },
+    {
+      "name": "Camera",
+      "material": {
+        "color": null,
+        "metallic": null,
+        "smoothness": null
+      },
+      "isActive": null,
+      "position": {
+        "x": 5.0,
+        "y": 0.1,
+        "z": 5.2
+      },
+      "rotation": {
+        "x": null,
+        "y": 180.0,
+        "z": null
+      },
+      "scale": {
+        "x": null,
+        "y": null,
+        "z": null
+      }
+    },
+    {
+      "name": "Drone_Body",
+      "material": {
+        "color": null,
+        "metallic": null,
+        "smoothness": null
+      },
+      "isActive": null,
+      "position": {
+        "x": 5.0,
+        "y": 0.0,
+        "z": 5.0
+      },
+      "rotation": {
+        "x": null,
+        "y": null,
+        "z": null
+      },
+      "scale": {
+        "x": 0.092,
+        "y": 0.092,
+        "z": 0.029
+      }
+    }
+  ]
+}
