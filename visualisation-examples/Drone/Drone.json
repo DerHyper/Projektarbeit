@@ -65,7 +65,7 @@
     {
       "id":"Camera",
       "attr":"x",
-      "value":"real(x)/1000.0"
+      "value":"real(x)/1000.0 - 2.0*(real(EPS_DRONE)/1000.0)"
     },
     {
       "id":"Camera",
@@ -75,12 +75,12 @@
     {
       "id":"Camera",
       "attr":"z",
-      "value":"real(y)/1000.0 + 2.0*(real(EPS_DRONE)/1000.0)"
+      "value":"real(y)/1000.0"
     },
     {
       "id":"Camera",
       "attr":"rotate_y",
-      "value":"180.0"
+      "value":"90.0"
     }
 
   ],
