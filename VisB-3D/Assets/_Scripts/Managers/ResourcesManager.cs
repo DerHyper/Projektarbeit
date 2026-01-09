@@ -11,7 +11,6 @@ public class ResourcesManager : MonoBehaviour
     /// Name of the predefined transparent material in the Resources folder. Used when setting colors with transparency.
     /// </summary>
     public Material transparentMaterial;
-    public Shader glTFPbrMetallicRoughnessMaterial;
     public Dictionary<string,Material> predefinedMaterials = new();
     private void Awake()
     {
