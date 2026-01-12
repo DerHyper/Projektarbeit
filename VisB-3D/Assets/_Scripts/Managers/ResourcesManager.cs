@@ -4,6 +4,9 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+/// Manager for loading and providing access to predefined resources like materials.
+/// </summary>
 public class ResourcesManager : MonoBehaviour
 {
     public static ResourcesManager instance;
