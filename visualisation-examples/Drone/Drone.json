@@ -81,6 +81,12 @@
       "id":"Camera",
       "attr":"rotate_y",
       "value":"90.0"
+    },
+    {
+      "for": {"from":1, "to":"card(obstacle_voxels)"},
+      "id":"temp_cube_%0",
+      "attr":"x",
+      "value":"0.0"
     }
 
   ],
