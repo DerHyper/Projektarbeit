@@ -29,7 +29,7 @@ public class WebSocketManager : MonoBehaviour
     private void Start()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        string url = "ws://localhost:8081";
+        string url = Consts.WEBSOCKET_URL;
         ConnectWS(url);
 #endif
     }
