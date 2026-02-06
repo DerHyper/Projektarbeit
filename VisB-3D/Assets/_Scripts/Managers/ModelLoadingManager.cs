@@ -9,6 +9,7 @@ using UnityEngine;
 public class ModelLoadingManager : MonoBehaviour
 {
     public static ModelLoadingManager instance;
+    public event Action OnModelLoaded;
     [SerializeField]
     private Transform modelParent;
     [SerializeField]
@@ -52,6 +53,7 @@ public class ModelLoadingManager : MonoBehaviour
 
         if (success) {
             await gltf.InstantiateMainSceneAsync(modelParent);
+            OnModelLoaded?.Invoke();
             return true;
         }
         else {
