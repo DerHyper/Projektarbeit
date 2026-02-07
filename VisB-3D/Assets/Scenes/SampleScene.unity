@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af8397528246d546b81d268a4c9dfa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freeCam: {fileID: 1237018027}
   cameras: []
 --- !u!1 &58754088
 GameObject:
@@ -373,6 +374,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137f39eae47b79142851a10924b8526d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickAction:
+    m_Name: Click
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9e9d27e8-4b35-4f43-a7d3-bcf16a566eec
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3478deb3-dd51-4d7e-a8ab-5b00f0ed3ba9
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Click
+      m_Flags: 0
+    m_Flags: 0
+  isClickHolding: 0
+  moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d2117aa1-7fa4-4129-9e82-276a7fa68ad0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 3d98eb38-0588-4257-9b5b-64559baa23e6
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: b07ac7fa-c556-479a-9074-540df62a4756
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: b4e61a01-25e4-4339-b522-7aa5be9f6222
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: e11c537a-0e68-4513-b654-4d9897035390
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: bc8846f0-dda4-4eca-8343-3eed2b5b48e3
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
+  isMoveHolding: 0
+  moveVerticalAction:
+    m_Name: Move Vertical
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 653efdde-5581-4657-81a8-55044acfba63
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: 163b396d-7da5-4293-b892-d630eac8bf34
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Vertical
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: fa11ac31-e2d8-46e5-8e5b-be7c3f6a4699
+      m_Path: <Keyboard>/shift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Vertical
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: b73bf2be-b256-46a8-8e2c-cdb733be2ed5
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Vertical
+      m_Flags: 8
+    m_Flags: 0
+  isMoveVerticalHolding: 0
+  cameraTarget: {fileID: 1159700302}
+  movementAmount: 1
 --- !u!1 &184799107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2335,7 @@ Transform:
   - {fileID: 963194228}
   - {fileID: 1237018021}
   - {fileID: 1159700302}
+  - {fileID: 1516392745}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1092381604
@@ -2868,8 +2974,8 @@ MonoBehaviour:
       Owner: {fileID: 1237018025}
       Enabled: 1
       Input:
-        LegacyInput: Mouse X
-        LegacyGain: 100
+        InputAction: {fileID: -5630151704836100654, guid: b585072aecb84244cb352997663ab730, type: 3}
+        Gain: 5
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -2879,13 +2985,15 @@ MonoBehaviour:
       Owner: {fileID: 1237018025}
       Enabled: 1
       Input:
-        LegacyInput: Mouse Y
-        LegacyGain: -100
+        InputAction: {fileID: -5630151704836100654, guid: b585072aecb84244cb352997663ab730, type: 3}
+        Gain: -5
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
         AccelTime: 0
         DecelTime: 0
+  PlayerIndex: -1
+  AutoEnableInputs: 1
 --- !u!1 &1320587348
 GameObject:
   m_ObjectHideFlags: 0
@@ -4119,7 +4227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516392745}
   - component: {fileID: 1516392744}
-  - component: {fileID: 1516392743}
+  - component: {fileID: 1516392746}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4127,26 +4235,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1516392743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516392742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1516392744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4170,13 +4258,44 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516392742}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1057488889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516392746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516392742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: b585072aecb84244cb352997663ab730, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!1 &1531138516
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,4 +5393,3 @@ SceneRoots:
   - {fileID: 1057488889}
   - {fileID: 1649553553}
   - {fileID: 1924145687}
-  - {fileID: 1516392745}

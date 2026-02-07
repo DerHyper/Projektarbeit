@@ -1,11 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Cinemachine;
 using UnityEditor;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager instance;
+    public CinemachineCamera freeCam;
     [SerializeField] private List<Camera> cameras = new List<Camera>();
 
     public void Awake()

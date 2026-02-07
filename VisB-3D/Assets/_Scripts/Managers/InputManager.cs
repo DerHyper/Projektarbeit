@@ -1,34 +1,139 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Xml.Serialization;
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    void Update()
-    {
-        CheckClick();
-    }
+    public static InputManager instance;
+    public InputAction clickAction;
+    public bool isClickHolding = false;
+    public InputAction moveAction;
+    public bool isMoveHolding = false;
+    public InputAction moveVerticalAction;
+    public bool isMoveVerticalHolding = false;
+    public Transform cameraTarget;
 
-    private void CheckClick()
+    public float movementAmount = 1;
+
+    private void Awake()
     {
-        if (!Input.GetMouseButtonDown(0))
+        if (instance == null)
         {
-            return;
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
 
-        if (!GetOnClickListener(out OnClickListener target))
-        {
-            return;
-        }
-
-        target.Click();
+        RegisterInputActions();
     }
 
-    private bool GetOnClickListener(out OnClickListener onClickListener)
+    private void FixedUpdate()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        CheckInput();
+    }
+
+    private void CheckInput()
+    {
+        if (isClickHolding) HandleMouseHolding();
+        if (isMoveHolding) HandleMoveHolding();
+        if (isMoveVerticalHolding) HandleMoveVerticalHolding();
+    }
+
+    private void HandleMoveVerticalHolding()
+    {
+        var direction = moveVerticalAction.ReadValue<float>();
+        Vector3 movementDirection = new Vector3(0, direction, 0) * movementAmount * Time.fixedDeltaTime;
+        Debug.Log("HandleMoveVertical: " + movementDirection);
+        cameraTarget.Translate(movementDirection);
+    }
+
+    private void HandleMoveHolding()
+    {
+        var direction = new Vector3(moveAction.ReadValue<Vector2>().x, 0, moveAction.ReadValue<Vector2>().y);
+        var orientation = CameraManager.instance.freeCam.State.GetCorrectedOrientation();
+        var scaledOrentation = orientation * Vector3.up;
+
+        // var eulerOrientation = orientation.eulerAngles;
+        Vector3 movementDirection = (orientation * direction) * movementAmount * Time.fixedDeltaTime;
+        Debug.Log("HandleMove: " + movementDirection + " Orientation: " + scaledOrentation);
+        cameraTarget.Translate(movementDirection);
+    }
+
+    private void HandleMouseHolding()
+    {
+        // Force mouse on screen
+
+    }
+
+    private void RegisterInputActions()
+    {
+        clickAction.Enable();
+        clickAction.performed += OnClickPerformed;
+        clickAction.canceled += OnClickCanceled;
+
+        moveAction.Enable();
+        moveAction.performed += OnMovePerformed;
+        moveAction.canceled += OnMoveCanceled;
+
+        moveVerticalAction.Enable();
+        moveVerticalAction.performed += OnMoveVerticalPerformed;
+        moveVerticalAction.canceled += OnMoveVerticalCanceled;
+    }
+
+    private void OnMoveVerticalCanceled(InputAction.CallbackContext context)
+    {
+        isMoveVerticalHolding = false;
+    }
+
+    private void OnMoveVerticalPerformed(InputAction.CallbackContext context)
+    {
+        isMoveVerticalHolding = true;
+    }
+
+    private void OnMoveCanceled(InputAction.CallbackContext context)
+    {
+        isMoveHolding = false;
+    }
+
+    private void OnMovePerformed(InputAction.CallbackContext context)
+    {
+        isMoveHolding = true;
+    }
+
+    private void OnClickPerformed(InputAction.CallbackContext context)
+    {
+        isClickHolding = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    
+    private void OnClickCanceled(InputAction.CallbackContext context)
+    {
+        isClickHolding = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        if (TryGetOnClickListener(out OnClickListener target))
+        {
+            target.Click();
+        }
+    }
+
+    /// <summary>
+    /// Return the OnClickListener of the clicked GO or its parents
+    /// </summary>
+    /// <param name="onClickListener"></param>
+    /// <returns></returns>
+    private bool TryGetOnClickListener(out OnClickListener onClickListener)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
 
         if (!Physics.Raycast(ray, out RaycastHit raycastHit))
         {
@@ -47,7 +152,7 @@ public class InputManager : MonoBehaviour
         }
 
         onClickListener = null;
-        return false;    
+        return false;
     }
 
 /// <summary>
