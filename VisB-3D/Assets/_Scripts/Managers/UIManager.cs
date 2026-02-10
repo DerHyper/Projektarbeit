@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,10 +33,12 @@ public class UIManager : MonoBehaviour
         panel.SetActive(!isActive);
     }
 
-    public void SetDropdownOptions(TMP_Dropdown dropdown, List<string> options)
+    public void SetDropdownOptions(TMP_Dropdown dropdown, List<string> options, string selectedOption = null)
     {
         dropdown.ClearOptions();
         dropdown.AddOptions(options);
+        int selectedIndex = options.IndexOf(selectedOption);
+        dropdown.value = selectedIndex;
     }
 
     public void OnCameraDropdownChanged(int index)

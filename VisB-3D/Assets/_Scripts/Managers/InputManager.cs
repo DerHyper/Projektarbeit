@@ -110,8 +110,8 @@ public class InputManager : MonoBehaviour
     private void OnClickPerformed(InputAction.CallbackContext context)
     {
         isClickHolding = true;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
     
     private void OnClickCanceled(InputAction.CallbackContext context)

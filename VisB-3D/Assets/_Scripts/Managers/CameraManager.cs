@@ -11,6 +11,7 @@ public class CameraManager : MonoBehaviour
     public static CameraManager instance;
     public CinemachineCamera freeCam;
     [SerializeField] private List<Camera> cameras = new List<Camera>();
+    public Camera currentCam;
 
     public void Awake()
     {
@@ -27,6 +28,7 @@ public class CameraManager : MonoBehaviour
     private void Start() {
         ModelLoadingManager.instance.OnModelLoaded += UpdateCameraList;
         ModelLoadingManager.instance.OnModelLoaded += UpdateCameraListOnUI;
+        SetActiveCamera(currentCam.name);
     }
 
     private void UpdateCameraList()
@@ -42,7 +44,8 @@ public class CameraManager : MonoBehaviour
     {
         UIManager.instance.SetDropdownOptions(
             UIManager.instance.cameraDropdown,
-            cameras.ConvertAll(cam => cam.name)
+            cameras.ConvertAll(cam => cam.name),
+            currentCam.name
         );
     }
 
@@ -50,7 +53,16 @@ public class CameraManager : MonoBehaviour
     {
         foreach (Camera cam in cameras)
         {
-            cam.gameObject.SetActive(cam.name == cameraName);
+            if (cam.name == cameraName)
+            {
+                cam.gameObject.SetActive(true);
+                currentCam = cam;
+            }
+            else
+            {
+                cam.gameObject.SetActive(false);
+            }
+            
         }
     }
 }
