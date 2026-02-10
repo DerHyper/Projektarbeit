@@ -34,7 +34,7 @@ public class ModelLoadingManager : MonoBehaviour
 #if UNITY_EDITOR
         if (loadDebugModelFromDisk)
         {
-            GameManager.instance.LoadModel(debugModelUri);
+            GameManager.instance.InitScene(debugModelUri);
         }
 #endif
     }
@@ -72,10 +72,19 @@ public class ModelLoadingManager : MonoBehaviour
 
     private void AddStateUpdaterRecursively(Transform parent)
     {
+        TryActivateCamera(parent);
         parent.gameObject.AddComponent<StateUpdater>();
         foreach (Transform child in parent)
         {
             AddStateUpdaterRecursively(child);
         }
+    }
+    private bool TryActivateCamera(Transform transform)
+    {
+        // Initially importet cameras are disables, so we have to enable them
+        Camera camera = transform.gameObject.GetComponent<Camera>();
+        if (camera == null) return false;
+        camera.enabled = true;
+        return true;
     }
 }

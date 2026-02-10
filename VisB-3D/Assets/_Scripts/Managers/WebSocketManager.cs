@@ -47,7 +47,7 @@ public class WebSocketManager : MonoBehaviour
         if (message.StartsWith(INIT_PREFIX))
         {
             string modelUri = message.Substring(INIT_PREFIX.Length);
-            GameManager.instance.LoadModel(modelUri);
+            GameManager.instance.InitScene(modelUri);
             ObjectManager.instance.ShowText(message);
             return;
         }

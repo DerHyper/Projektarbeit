@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public AppState currentState = AppState.Idle;
+    [SerializeField] public string startCamera = "Camera";
     public enum AppState
     {
         Idle,
@@ -32,15 +33,21 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game state changed to: " + newState.ToString());
     }
 
-    public async void LoadModel(string uri)
+    public async void InitScene(string modelUri)
     {
         SetState(AppState.LoadingModel);
+        LoadModel(modelUri);
+        CameraManager.instance.SetActiveCamera(startCamera);
+        SetState(AppState.Running);
+    }
+
+    private async void LoadModel(string uri)
+    {
         bool success = await ModelLoadingManager.instance.LoadModelFromUri(uri);
         if (success)
         {
             ModelLoadingManager.instance.InitModelObjects();
         }
         ObjectManager.instance.UpdateManagedObjects();
-        SetState(AppState.Running);
     }
 }

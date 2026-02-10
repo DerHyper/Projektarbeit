@@ -133,7 +133,7 @@ public class InputManager : MonoBehaviour
     /// <returns></returns>
     private bool TryGetOnClickListener(out OnClickListener onClickListener)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        Ray ray = CameraManager.instance.currentCam.ScreenPointToRay(Mouse.current.position.ReadValue());
 
         if (!Physics.Raycast(ray, out RaycastHit raycastHit))
         {
