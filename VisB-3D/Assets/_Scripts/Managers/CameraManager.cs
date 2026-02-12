@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -62,7 +63,22 @@ public class CameraManager : MonoBehaviour
             {
                 cam.gameObject.SetActive(false);
             }
-            
+
         }
     }
+
+    public void allowFreeCamMove(bool isMovable)
+    {
+        var axisController = freeCam.GetComponent<CinemachineInputAxisController>();
+        if (!axisController)
+        {
+            return;
+        }
+
+        foreach (var controller in axisController.Controllers)
+        {
+            controller.Enabled = isMovable;
+        }
+    }
+
 }

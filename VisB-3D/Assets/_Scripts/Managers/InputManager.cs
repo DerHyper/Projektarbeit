@@ -110,6 +110,7 @@ public class InputManager : MonoBehaviour
     private void OnClickPerformed(InputAction.CallbackContext context)
     {
         isClickHolding = true;
+        CameraManager.instance.allowFreeCamMove(true);
         //Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
     }
@@ -117,8 +118,9 @@ public class InputManager : MonoBehaviour
     private void OnClickCanceled(InputAction.CallbackContext context)
     {
         isClickHolding = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        CameraManager.instance.allowFreeCamMove(false);
+        // Cursor.visible = true;
+        // Cursor.lockState = CursorLockMode.None;
 
         if (TryGetOnClickListener(out OnClickListener target))
         {
