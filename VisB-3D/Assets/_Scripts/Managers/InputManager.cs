@@ -177,6 +177,6 @@ public class InputManager : MonoBehaviour
             return true;
         }
 
-        return FindOnClickListenerInParents(target, out onClickListener);
+        return FindOnClickListenerInParents(parent, out onClickListener);
     }
 }
