@@ -10,4 +10,11 @@ public static class JavaScriptAPI
     /// </summary>
     [DllImport("__Internal")]
     public static extern void DebugAlert(string str);
+
+    /// <summary>
+    /// Method for sending messages to a WebSocket server.
+    /// </summary>
+    /// <param name="messageJson">JSON String from WSMessageDto containing message type and meta infos</param>
+    [DllImport("__Internal")]
+    public static extern void SendWSMessage(string messageJson);
 }

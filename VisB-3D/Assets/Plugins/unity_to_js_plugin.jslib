@@ -7,6 +7,21 @@ mergeInto(LibraryManager.library, {
   },
 
   /**
+   * Method for sending messages to a WebSocket server.
+   * @param {string} messageJson JSON String from WSMessageDto containing message type and meta infos 
+   */ 
+  SendWSMessage: function (messageJson) {
+    const msg = UTF8ToString(messageJson);
+
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      console.log("Sending message to server: " + msg);
+      ws.send(msg);
+    } else {
+      console.error("WebSocket not connected!");
+    }
+  },
+
+  /**
    * Connect to a WebSocket server.
    * @param {string} urlUTF String URL of the WebSocket server, eg "ws://localhost:8080"
    */
