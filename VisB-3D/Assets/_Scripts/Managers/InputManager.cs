@@ -17,8 +17,11 @@ public class InputManager : MonoBehaviour
     public InputAction moveVerticalAction;
     public bool isMoveVerticalHolding = false;
     public Transform cameraTarget;
+    public float clickHoldingTimeThreashhold = 0.1f;
 
     public float movementAmount = 1;
+
+    private float currentClickHoldingTime = 0;
 
     private void Awake()
     {
@@ -32,6 +35,13 @@ public class InputManager : MonoBehaviour
         }
 
         RegisterInputActions();
+    }
+    private void Update()
+    {
+        if (isClickHolding)
+        {
+            currentClickHoldingTime += Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
@@ -122,10 +132,14 @@ public class InputManager : MonoBehaviour
         // Cursor.visible = true;
         // Cursor.lockState = CursorLockMode.None;
 
-        if (TryGetOnClickListener(out OnClickListener target))
+        if (currentClickHoldingTime < clickHoldingTimeThreashhold)
         {
-            target.Click();
+            if (TryGetOnClickListener(out OnClickListener target))
+            {
+                target.Click();
+            }
         }
+        currentClickHoldingTime = 0;
     }
 
     /// <summary>

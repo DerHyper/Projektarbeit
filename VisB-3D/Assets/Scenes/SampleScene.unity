@@ -481,6 +481,7 @@ MonoBehaviour:
     m_Flags: 0
   isMoveVerticalHolding: 0
   cameraTarget: {fileID: 1159700302}
+  clickHoldingTimeThreashhold: 0.2
   movementAmount: 1
 --- !u!1 &184799107
 GameObject:
