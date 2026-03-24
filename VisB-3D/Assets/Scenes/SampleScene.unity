@@ -482,7 +482,7 @@ MonoBehaviour:
   isMoveVerticalHolding: 0
   cameraTarget: {fileID: 1159700302}
   clickHoldingTimeThreashhold: 0.2
-  movementAmount: 1
+  movementAmount: 10
 --- !u!1 &184799107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3771,7 +3771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modelParent: {fileID: 973846158}
   loadDebugModelFromDisk: 1
-  debugModelUri: E:\User\Arbeiten\Studium\Master\Projektarbeit\Projektarbeit\visualisation-examples\Drone\Drone.glb
+  debugModelUri: E:\User\Arbeiten\Studium\Master\Projektarbeit\Projektarbeit\visualisation-examples\TrafficLight\TrafficLight_City\TrafficLight_City.glb
 --- !u!1 &1485717532
 GameObject:
   m_ObjectHideFlags: 0
