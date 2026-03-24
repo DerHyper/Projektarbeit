@@ -75,7 +75,7 @@ public class ModelLoadingManager : MonoBehaviour
         TryActivateCamera(parent);
         parent.gameObject.AddComponent<StateUpdater>();
         parent.gameObject.AddComponent<OnClickListener>();
-        parent.gameObject.AddComponent<BoxCollider>();
+        parent.gameObject.AddComponent<MeshCollider>();
         foreach (Transform child in parent)
         {
             AddStateUpdaterRecursively(child);
