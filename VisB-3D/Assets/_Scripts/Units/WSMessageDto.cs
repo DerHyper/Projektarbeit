@@ -32,7 +32,7 @@ public class WSMessageDto
         bool ctrlKey = false,
         bool metaKey = false,
         bool shiftKey = false,
-        string jsVars = "")
+        string jsVars = "{}")
     {
         this.type = type;
         this.objectId = objectId;
