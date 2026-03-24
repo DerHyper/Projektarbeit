@@ -5,6 +5,7 @@ using System.Data.Common;
 using System.Xml.Serialization;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
@@ -151,7 +152,7 @@ public class InputManager : MonoBehaviour
     {
         Ray ray = CameraManager.instance.currentCam.ScreenPointToRay(Mouse.current.position.ReadValue());
 
-        if (!Physics.Raycast(ray, out RaycastHit raycastHit))
+        if (!Physics.Raycast(ray, out RaycastHit raycastHit) || EventSystem.current.IsPointerOverGameObject())
         {
             onClickListener = null;
             return false;
